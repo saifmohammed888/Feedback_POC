@@ -13,9 +13,8 @@
 
 .nav{
     margin: 0 auto;
-    padding: 0px;
     width: 100vw;
-    padding: 0 20vw;
+    padding: 1vh 20vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,7 +32,7 @@
     
     .nav{
         width: 100vw;
-        padding: 0 2vw;
+        padding: 1vh 2vw;
     }
 
     .nav>h2{
