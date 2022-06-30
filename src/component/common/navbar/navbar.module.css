@@ -1,0 +1,51 @@
+.circle{
+    width: 2vw;
+    color: red;
+}
+
+.menuIcon{
+    width: 10%;
+    margin-right: 2vw;
+    color: gray;
+    display: none;
+}
+.nav>h2{display: flex;align-items: center;}
+
+.nav{
+    margin: 0 auto;
+    padding: 0px;
+    width: 100vw;
+    padding: 0 20vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(208, 208, 208);
+}
+
+.border{
+    border: 1px solid rgb(208, 208, 208);
+    border-radius: 30%;
+    padding: 1px;
+}
+
+@media screen and (max-width:450px) {
+    
+    .nav{
+        width: 100vw;
+        padding: 0 2vw;
+    }
+
+    .nav>h2{
+        font-size: 4vw;
+    }
+
+    .circle{
+        width: 7vw;
+        color: red;
+    }
+
+    .menuIcon{
+        display: block;
+    }
+}

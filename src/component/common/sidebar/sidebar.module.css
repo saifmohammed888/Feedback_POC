@@ -1,0 +1,14 @@
+.sidebar{
+    width: 70vw;
+    height: 100vh;
+    padding: 10px;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background-color: red;
+}
+
+.close{
+    width: 6vw;
+}
