@@ -12,6 +12,7 @@ const titleMapper = {
   "/inspection": "Inspection and Breakdown",
   "/chooseEquipment":  "Choose Equipment",
   "/scan": "Scan Equipment",
+  "/dailyInspection": "Daily Inspection",
 }
 export const Navbar = () => {
 

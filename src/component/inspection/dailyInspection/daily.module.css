@@ -1,0 +1,60 @@
+.inspection{
+    padding: 5vh 5vw;
+}
+
+.details{
+    height: auto;
+    margin-top: 3vh;
+}
+
+.details>p{
+   margin: 5px;
+   font-weight: bold;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+
+}
+.details>p>span{
+    margin-left: 5px;
+    font-weight: bold;
+ }
+
+ .executer{
+    margin-top:6vh;
+ }
+
+ .executer>p{
+    display: flex;
+ }
+ .executer>p>span{
+    margin-left: 5vw;
+    color: white;
+    background-color: red;
+    padding: 5px;
+    font-size: 10px;
+    border-radius: 5%;
+  }
+
+  .executer>input{
+    width: 80%;
+    margin: auto;
+    padding: 2px;
+    border: 1px solid gainsboro
+  }
+
+  .buttons{
+    display: flex;
+    margin: 3vh 0;
+    gap: 10px;
+  }
+
+  .buttons>button{
+    padding: 3px 10px;
+    border: 1px solid gainsboro;
+    background-color: rgb(232, 232, 232);
+    border-radius: 10%;
+  }
+
+  .buttons>button:nth-child(2){
+    background-color: rgb(165, 202, 156);
+  }
