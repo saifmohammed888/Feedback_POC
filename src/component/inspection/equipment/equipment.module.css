@@ -1,0 +1,50 @@
+.equipment{
+    padding: 20vh 10vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.inputContainer{
+    width: 80vw;
+    margin: auto;
+    gap: 10px;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+    display: flex;
+    border-radius: 10px;
+    border: rgb(170, 170, 170) solid 1px;
+}
+
+.disabled{
+    width: 80vw;
+    margin: auto;
+    gap: 10px;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+    display: flex;
+    border-radius: 10px;
+    border: rgb(230, 230, 230) solid 1px;
+    color: gray;
+}
+
+.input{
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.button{
+    width: 50vw;
+    margin: auto;
+    padding: 5px;
+    border-radius: 5%;
+    border: 1px solid gainsboro;
+    background-color: rgb(144, 184, 144);
+    color: white;
+}

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import toast from 'react-hot-toast'
-import { useLocation } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { GlobalContext } from '../../utils/context/globalContext'
 import SelectItem from './dropdown'
 import styles from "./warehouse.module.css"
@@ -13,12 +13,13 @@ const WarehouseList = [
 ]
 export const Warehouse = () => {
   const {warehouse} = useContext(GlobalContext);
-  const location = useLocation();
-  console.log(location)
+  const router = useNavigate()
   
   const handleBreakdown = () => {
     if(warehouse===""){
       toast.error("Please select a warehouse");
+    }else{
+      router("/inspection");
     }
   }
 

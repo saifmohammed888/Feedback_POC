@@ -1,17 +1,20 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import {InformationCircleIcon, MenuIcon } from '@heroicons/react/solid'
 import styles from "./navbar.module.css"
 import { Sidebar } from '../sidebar'
 import { useLocation } from 'react-router-dom';
+import { GlobalContext } from '../../../utils/context/globalContext';
 
 
 const titleMapper = {
   "/": "Material Handling Equipment",
   "/warehouse": "Function Selection",
+  "/inspection": "Inspection and Breakdown",
+  "/chooseEquipment":  "Choose Equipment",
 }
 export const Navbar = () => {
 
-const [isOpen, setIsOpen] = useState(false)
+const {isOpen,setIsOpen}  = useContext(GlobalContext);
 const location = useLocation()
 
 return (

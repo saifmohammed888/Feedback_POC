@@ -7,6 +7,9 @@ import Login from './component/login';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import GlobalContextProvider from './utils/context/globalContext';
 import { Warehouse } from './component/warehouse';
+import { Inspection } from './component/inspection';
+import { DailyInspection } from './component/inspection/dailyInspection';
+import { ChooseEquipment } from './component/inspection/equipment';
 
 function App() {
   
@@ -38,7 +41,9 @@ function App() {
               <Routes>
                 <Route path='/' element={<Login />} />
                 <Route path='/warehouse' element={<Warehouse />} />
-                <Route path='/' element={<Login />} />
+                <Route path='/inspection' element={<Inspection />} />
+                <Route path='/dailyInspection' element={<DailyInspection />} />
+                <Route path='/chooseEquipment' element={<ChooseEquipment />} />
               </Routes>
       </Layout>
       </GlobalContextProvider>

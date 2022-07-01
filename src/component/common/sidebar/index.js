@@ -11,7 +11,7 @@ import { Link, useNavigate } from 'react-router-dom';
 export const Sidebar = (props) => {
 
   const router = useNavigate();
-  const {isLoggedIn,employee,warehouse,setIsLoggedIn} = useContext(GlobalContext);
+  const {isLoggedIn,employee,warehouse,setIsLoggedIn,setIsOpen} = useContext(GlobalContext);
 
   return (
     <div className={styles.sidebar}>
@@ -26,12 +26,13 @@ export const Sidebar = (props) => {
          
           <span className={styles.change}>
             <p>Warehouse</p>
-            <Link to="/warehouse">Change</Link>
+            <Link to="/warehouse" onClick={()=>{setIsOpen(false)}}>Change</Link>
           </span>
           <p className={styles.button}><HomeOutlined/> <span>{warehouse}</span></p>
           <Button className='primary' onClick={()=>{
             localStorage.setItem('isLoggedIn', false);
             setIsLoggedIn(false);
+            setIsOpen(false)
             router("/", { replace: true })
           }} danger>Logout</Button>
          
