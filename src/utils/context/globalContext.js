@@ -11,6 +11,7 @@ const GlobalContextProvider = ({children}) => {
   const [warehouse, setWarehouse] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [equipmentId, setEquipmentId] = useState(null);
+  const [equipmentDetails, setEquipmentDetails] = useState({});
   const Employee = {username: 'admin', password: 'admin@123'};
   const router = useNavigate();
 
@@ -37,11 +38,13 @@ const GlobalContextProvider = ({children}) => {
           warehouse,
           isOpen,
           equipmentId,
+          equipmentDetails,
           setIsOpen,
           setIsLoggedIn,
           setLoading,
           setWarehouse,
-          setEquipmentId
+          setEquipmentId,
+          setEquipmentDetails
         }
        }
     >

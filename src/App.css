@@ -41,7 +41,7 @@
   width: 100vw;
 }
 
-.ant-modal-body{
+/* .ant-modal-body{
   background-color: gainsboro;
   padding: 10px !important;
   text-align: center;
@@ -53,4 +53,4 @@
 
 .ant-modal-footer{
   display: none !important;
-}
+} */

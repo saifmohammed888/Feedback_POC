@@ -1,0 +1,27 @@
+.details{
+    height: auto;
+    padding: 10px;
+    border: 1px solid gainsboro;
+    background-color: rgb(195, 234, 215);
+}
+
+.details>p{
+   margin: 5px;
+   font-weight: bold;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+
+}
+.details>p>span{
+    margin-left: 5px;
+    font-weight: bold;
+ }
+
+ .icon{
+    width: 10vw;
+ }
+ .icons{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+ }
