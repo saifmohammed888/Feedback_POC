@@ -4,7 +4,8 @@
 
 .details{
     height: auto;
-    margin-top: 3vh;
+    margin: 3vh auto;
+    padding: 10px 0;
 }
 
 .details>p{
@@ -43,8 +44,8 @@
   }
 
   .buttons{
-    width: 80%;
-    justify-content: space-around;
+    width: 100%;
+    justify-content: center;
     display: flex;
     margin: 6vh 0;
     gap: 10px;
@@ -113,4 +114,36 @@
   background-color: aliceblue;
   padding: 10px;
   font-size: 10px;
+}
+
+.upload{
+  margin-top: 3vh;
+}
+
+.treatmentDetails
+{
+  padding: 20px;
+}
+
+.workDetails
+{
+  margin: 5vh 1vw;
+}
+
+.workDetails>p{
+  width: 80%;
+  justify-content: space-between;
+  display: flex;
+}
+
+.workDetails>p>span{
+ font-weight: bold;
+}
+
+.workDetails>h4{
+  margin-top: 4vh;
+  padding: 10px;
+  background-color: rgb(254, 215, 215);
+  border-radius: 10px;
+  border: 1px solid rgb(231, 139, 139);
 }

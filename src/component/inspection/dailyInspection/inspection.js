@@ -5,8 +5,7 @@ import styles from "./daily.module.css"
 export const Inspection = ({handleComplete}) => {
   return (
     <section className={styles.breakageDetails}>
-    <p><b>Inspection Items :</b> <span>Pre Inspection preparation</span></p>
-    <p>Belt :<b>No Breakage, Dirt of Foreign matter</b></p>
+     <InspectionItem/>
     <section className={styles.radioDetails}>
         <input className={styles.radio} type={"radio"} />
         <label>Good</label>
@@ -17,4 +16,13 @@ export const Inspection = ({handleComplete}) => {
   
   </section>
   )
+}
+
+export const  InspectionItem = () => {
+    return(
+        <section>
+              <p><b>Inspection Items :</b> <span>Pre Inspection preparation</span></p>
+              <p>Belt :<b>No Breakage, Dirt of Foreign matter</b></p>
+        </section>
+    )
 }

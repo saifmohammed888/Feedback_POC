@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react'
 import { GlobalContext } from '../../../utils/context/globalContext';
@@ -6,12 +7,14 @@ import { CompletedInspection } from './complete';
 import { Inspection } from './inspection';
 import { StartInspectComp } from './start';
 import styles from './daily.module.css'
+import { useNavigate } from 'react-router-dom';
 
 export const DailyInspection = () => {
-  const {equipmentDetails} = useContext(GlobalContext);
+ 
   const [startInspection,setStartInspect] = useState(false);
   const [completeInspection,setCompleteInspection] = useState(false);
   const [isLoading,setLoading] = useState(false);
+  const route = useNavigate()
   
   const handleStart = () => {
     
@@ -30,23 +33,33 @@ export const DailyInspection = () => {
     setTimeout(() => {
       setCompleteInspection(true);
       setLoading(false);
+      route("/treatment")
     }, 2000);
   }
 
-  const equipment = JSON.parse(equipmentDetails)
+
   return (
       <>
       {isLoading? <Loader/> : null}
       <div className={styles.inspection}>
-        <h4>Equipment Information</h4>
         <p><b>Inspection StartTime :</b> <span>14/20/2022 14.02</span></p>
-        <section className={styles.details}>
-              {Object.keys(equipment).map(function(key, index) {
-                  return <p key={index}>{key}: <span>{equipment[key]}</span> </p>
-              })}
-        </section>
-        {!startInspection ?<StartInspectComp handleStart={handleStart} /> :<>{!completeInspection ?<Inspection handleComplete={handleComplete} />:<CompletedInspection handleComplete={handleComplete} />}</>}
+        <InspectionDetail />
+        {!startInspection ?<StartInspectComp handleStart={handleStart} /> :<Inspection handleComplete={handleComplete} />}
       </div>
       </>
+  )
+}
+
+export const InspectionDetail = () =>{
+   const {equipmentDetails} = useContext(GlobalContext);
+   const equipment = JSON.parse(equipmentDetails)
+
+  return (
+    <section className={styles.details}>
+    <h4>Equipment Information</h4>
+    {Object.keys(equipment).map(function(key, index) {
+        return <p key={index}>{key}: <span>{equipment[key]}</span> </p>
+    })}
+    </section>
   )
 }
