@@ -1,6 +1,6 @@
 import { Button, Checkbox, Form, Input } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { GlobalContext } from '../../utils/context/globalContext';
 import { Loader } from '../common/loader';
@@ -13,12 +13,12 @@ const Login = () => {
   const router = useNavigate()
   const {setIsLoggedIn,setLoading,isLoading,employee} = useContext(GlobalContext);
 
-  useEffect(()=>{
-    if(localStorage.getItem('isLoggedIn')){
-      toast.success("Login Successful");
-      router('/warehouse');
-    }
-  },[])
+  // useEffect(()=>{
+  //   if(localStorage.getItem('isLoggedIn')){
+  //     toast.success("Login Successful");
+  //     // router('/warehouse');
+  //   }
+  // },[])
 
   const onFinish = async (values) => {
     if(employee.username === values.username && employee.password === values.password) {

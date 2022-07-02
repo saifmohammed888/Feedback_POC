@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import {InformationCircleIcon, MenuIcon } from '@heroicons/react/solid'
 import styles from "./navbar.module.css"
 import { Sidebar } from '../sidebar'
-import { useLocation } from 'react-router-dom';
 import { GlobalContext } from '../../../utils/context/globalContext';
 
 
@@ -17,7 +16,6 @@ const titleMapper = {
 export const Navbar = () => {
 
 const {isOpen,setIsOpen}  = useContext(GlobalContext);
-const location = useLocation()
 
 return (
     <nav className={styles.nav}>
