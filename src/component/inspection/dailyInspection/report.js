@@ -1,16 +1,20 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
+import { CheckCircleIcon } from '@heroicons/react/solid';
 import { Select } from 'antd';
 
-import React from 'react'
+import React, { useState } from 'react'
 import TableComp from '../../common/utlity/table';
 import styles from "./daily.module.css"
 import UploadComp from './uploadFile'
 
 export const Report = () => {
    
-
+  const [completed,setCompleted] = useState(false)
 
   return (
+    <>
+    {!completed?
     <section className={styles.treatmentDetails}>
     <p><b>Inspection EndTime :</b> <span>14/20/2022 18.00</span></p>
     <h4>Breakdown Reason</h4>
@@ -24,35 +28,44 @@ export const Report = () => {
     <WorkDetails/>
     <section className={styles.buttons}>
         <button>Save in Draft</button>
-        <button>Complete</button>
+        <button type='button' onClick={()=>{setCompleted(true)}}>Completed</button>
     </section>
-   </section>
+    </section>:
+        <section className={styles.treatmentComplete}>
+            <h2>
+                <CheckCircleIcon className={styles.check} />
+                Inspection Completed</h2>
+        </section>
+    }
+    </>
   )
 }
 
 export const SelectItem = () =>{
     const { Option } = Select;
     const handleChange = (value) => {
-        console.log(value); // { value: "lucy", key: "lucy", label: "Lucy (101)" }
-      };
+        console.log(value); 
+    };
 
     return (
-        <>
+        <section className={styles.select}>
         <Select
                 labelInValue
+                placeholder="Please Select Reason"
                 defaultValue={{
-                value: 'lucy',
-                label: 'Lucy (101)',
+                    value: 'partBroken',
+                    label: 'Part Broken',
                 }}
                 style={{
-                width: 120,
+                width: 320,
                 }}
                 onChange={handleChange}
             >
-                <Option value="jack">Jack (100)</Option>
-                <Option value="lucy">Lucy (101)</Option>
+                <Option value="partBroken">Part Broken</Option>
+                <Option value="short">Short Circuit</Option>
+                <Option value="Oil">Oiling</Option>
         </Select>
-        </>
+        </section>
     )
 }
 

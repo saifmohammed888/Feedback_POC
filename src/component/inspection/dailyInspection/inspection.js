@@ -9,6 +9,7 @@ export const Inspection = ({handleComplete}) => {
     <section className={styles.radioDetails}>
         <input className={styles.radio} type={"radio"} />
         <label>Good</label>
+        <br/>
         <input className={styles.radio} type={"radio"} />
         <label>Defective</label>
       <button onClick={handleComplete} className={styles.startInspectButton}>Complete Inspection</button>

@@ -29,7 +29,7 @@ const Login = () => {
         localStorage.setItem('isLoggedIn', true);
         toast.success('Login Successful');
         router("/warehouse");
-      },2000)
+      },1000)
      
     }else{
       toast.error("Invalid Credentials");

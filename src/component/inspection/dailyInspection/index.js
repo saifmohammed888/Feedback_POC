@@ -22,7 +22,7 @@ export const DailyInspection = () => {
     setTimeout(() => {
       setStartInspect(true);
       setLoading(false);
-    }, 2000);
+    }, 1000);
 
     console.log(startInspection)
   }
@@ -39,14 +39,14 @@ export const DailyInspection = () => {
 
 
   return (
-      <>
+      <section className={styles.dailyInspection}>
       {isLoading? <Loader/> : null}
       <div className={styles.inspection}>
         <p><b>Inspection StartTime :</b> <span>14/20/2022 14.02</span></p>
         <InspectionDetail />
         {!startInspection ?<StartInspectComp handleStart={handleStart} /> :<Inspection handleComplete={handleComplete} />}
       </div>
-      </>
+      </section>
   )
 }
 

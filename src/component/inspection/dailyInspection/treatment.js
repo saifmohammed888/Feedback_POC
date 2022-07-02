@@ -23,8 +23,7 @@ export const Treatment = () => {
     
     <InspectionItem />
     <p>Inspection Result : <b>Defective</b></p>
-
-   
+    
     <section className={styles.radioDetails}>
         <input className={styles.radio} type={"radio"} />
         <label>Treatment Completed</label>

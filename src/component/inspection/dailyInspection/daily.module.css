@@ -85,7 +85,13 @@
 .radioDetails{
     display:block;
     padding: 10px 5px;
+  
 }
+
+.radio{
+  margin: 1vh 2vw;
+}
+
 
 .startInspectButton{
   width: 80%;
@@ -146,4 +152,30 @@
   background-color: rgb(254, 215, 215);
   border-radius: 10px;
   border: 1px solid rgb(231, 139, 139);
+}
+
+.treatmentDetails>input{
+  width: 80%;
+  margin: 2vh auto;
+  padding: 2px;
+  border: 1px solid gainsboro;
+  padding: 1vw;
+}
+
+.select{
+  margin: 2vh 0;
+}
+
+.treatmentComplete{
+  padding: 10vh 2vw;
+  text-align: center;
+}
+
+.check{
+  width: 10vw;
+  display: block;
+  text-align: center;
+  margin: auto;
+  background-color: green;
+  color:white;
 }
