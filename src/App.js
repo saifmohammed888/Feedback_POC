@@ -13,6 +13,7 @@ import { ChooseEquipment } from './component/inspection/equipment';
 import { Scan } from './component/inspection/scan';
 import { Treatment } from './component/inspection/dailyInspection/treatment';
 import { Report } from './component/inspection/dailyInspection/report';
+import { InspectionList } from './component/list';
 
 function App() {
   
@@ -50,6 +51,7 @@ function App() {
                 <Route path='/scan' element={<Scan />} />
                 <Route path='/treatment' element={<Treatment />} />
                 <Route path='/report' element={<Report />} />
+                <Route path='/inspectionList' element={<InspectionList />} />
               </Routes>
       </Layout>
       </GlobalContextProvider>

@@ -17,6 +17,9 @@ export const Inspection = () => {
   const handleBreakdown = (item) => {
     if(item === "Go to Daily Inspection Page"){
         route("/chooseEquipment");
+    }  
+    else if(item === "Go to List Page"){
+        route("/inspectionList");
     }   
   }
 
