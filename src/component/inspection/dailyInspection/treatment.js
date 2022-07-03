@@ -34,7 +34,7 @@ export const Treatment = () => {
         <br/>
         
         <TextArea placeholder='Remarks' id="remark" rows={4} />
-        {error ?<p>please enter valid remarks</p>:null}
+        {error ?<p className={styles.error}>please enter valid remarks</p>:null}
         <UploadComp  />
         <h4>Part Used</h4>
         <input className={styles.radio} type={"radio"} />
@@ -45,7 +45,6 @@ export const Treatment = () => {
         <br/>
         <button className={styles.startInspectButton} onClick={()=>{
           let remarks = document.getElementById("remark").value;
-          console.log("dksml")
           if(remarks === ""){
             setError(true)
           }

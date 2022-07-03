@@ -13,6 +13,7 @@ import UploadComp from './uploadFile'
 export const Report = () => {
    
   const [completed,setCompleted] = useState(false)
+  const [error,setError] = useState(false);
   const route = useNavigate();
 
   useEffect(()=>{
@@ -29,7 +30,8 @@ export const Report = () => {
     <section className={styles.treatmentDetails}>
     <p><b>Inspection EndTime :</b> <span>14/20/2022 18.00</span></p>
     <h4>Breakdown Reason</h4>
-    <input placeholder='Enter Breakdown reason'></input>
+    <input id="breakdown" placeholder='Enter Breakdown reason'></input>
+    {error ?<p className={styles.error}>please enter valid breakdown reason</p>:null}
     <h4>Working Condition Post Treatment </h4>
     <UploadComp />
     <h4>Cause </h4>
@@ -39,7 +41,13 @@ export const Report = () => {
     <WorkDetails/>
     <section className={styles.buttons}>
         <button>Save in Draft</button>
-        <button type='button' onClick={()=>{setCompleted(true)}}>Completed</button>
+        <button type='button' onClick={()=>{
+            let breakdown = document.getElementById("breakdown").value;
+            if(breakdown !== ""){
+                setCompleted(true)
+            }else{
+                setError(true)
+           }}}>Completed</button>
     </section>
     </section>:
         <section className={styles.treatmentComplete}>
