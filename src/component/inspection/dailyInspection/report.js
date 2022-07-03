@@ -3,7 +3,9 @@
 import { CheckCircleIcon } from '@heroicons/react/solid';
 import { Select } from 'antd';
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import { Loader } from '../../common/loader';
 import TableComp from '../../common/utlity/table';
 import styles from "./daily.module.css"
 import UploadComp from './uploadFile'
@@ -11,6 +13,15 @@ import UploadComp from './uploadFile'
 export const Report = () => {
    
   const [completed,setCompleted] = useState(false)
+  const route = useNavigate();
+
+  useEffect(()=>{
+    if(completed){
+        setTimeout(()=>{
+            route("/inspectionList")
+        },[2000])
+    }
+  },[completed])
 
   return (
     <>
@@ -35,6 +46,7 @@ export const Report = () => {
             <h2>
                 <CheckCircleIcon className={styles.check} />
                 Inspection Completed</h2>
+                <Loader/>
         </section>
     }
     </>

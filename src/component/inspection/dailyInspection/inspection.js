@@ -6,6 +6,7 @@ export const Inspection = ({handleComplete}) => {
   return (
     <section className={styles.breakageDetails}>
      <InspectionItem/>
+     <p>Inspection Manual</p>
     <section className={styles.radioDetails}>
         <input className={styles.radio} type={"radio"} />
         <label>Good</label>

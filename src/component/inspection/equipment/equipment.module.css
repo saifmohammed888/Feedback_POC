@@ -54,3 +54,8 @@
 {
     display: flex;
 }
+
+.error{
+    color: red;
+    font-size: 3vw;
+}

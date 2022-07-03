@@ -112,7 +112,8 @@
 .breakageDetails>p{
   margin: 2vh 5px;
   font-weight: bold;
-  display: grid;
+  width: 50vw;
+  /* display: grid; */
   grid-template-columns: 1fr 1fr;
 }
 
@@ -178,4 +179,16 @@
   margin: auto;
   background-color: green;
   color:white;
+}
+.error{
+  color: red;
+  font-size: 10px;
+}
+
+.breakageDetails>p{
+  width: auto;
+  text-align: center;
+  padding: 2px;
+  background-color: rgb(212, 248, 212);
+  border-radius: 20px;
 }

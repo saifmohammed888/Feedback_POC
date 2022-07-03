@@ -10,11 +10,13 @@ export const ChooseEquipment = () => {
   const [equipment,setEquipment] = useState(null)
   const [disable,setDisable] = useState(false)
   const {setEquipmentId,setEquipmentDetails} = useContext(GlobalContext);
+  const [error,setError] = useState(false)
 
   const route = useNavigate();
 
   const handleSubmit = ()=>{
-    if(equipment!==null || equipment!==""){
+    console.log(equipment)
+    if(equipment!==null && equipment!==""){
         setEquipmentId(equipment)
         setDisable(true)
         toast.success("Equipment Id Saved")
@@ -27,6 +29,8 @@ export const ChooseEquipment = () => {
          "Vendor":"Daifuku"
          })
         route("/dailyInspection");
+    }else{
+      setError(true)
     }
   }
 
@@ -40,8 +44,10 @@ export const ChooseEquipment = () => {
         <label>Enter Equipment Id</label>
         <span className={!disable?styles.inputContainer:styles.disabled}>
         <UserOutlined/>
-         <input disabled={disable}  className={styles.input} value={equipment} onChange={(e)=>{setEquipment(e.target.value)}} placeholder={"Enter Equipment Id"}></input>
+         <input className={styles.input} value={equipment} onChange={(e)=>{setEquipment(e.target.value)}} placeholder={"Enter Equipment Id"}></input>
+        
         </span>
+        {error ? <p className={styles.error}>please enter equipment id</p>:null}
         <button className={styles.button} onClick={handleSubmit}>Submit</button>
        
     </div>
