@@ -21,6 +21,7 @@ const Login = () => {
   // },[])
 
   const onFinish = async (values) => {
+    console.log(values)
     if(employee.username === values.username && employee.password === values.password) {
       setIsLoggedIn(true);
       setLoading(true)
@@ -55,7 +56,7 @@ const Login = () => {
   return (
     <>
     {isLoading? <Loader />: null}
-      <h2 className={styles.header}>Login</h2>
+      <h1 className={styles.header}>Login</h1>
       <div className={styles.form}>
         <Form
           validateMessages={validateMessages} 
@@ -75,14 +76,14 @@ const Login = () => {
           autoComplete="off"
         >
           <Form.Item
-            label="Username"
+            label="Employee ID"
             name="username"
             rules={[
               {
                 required: true,
                 type: 'username',
-                message: 'Please input your username!',
-              },
+                message: 'Enter your employee Id!',
+              }
             ]}
           >
             <Input placeholder="Enter your employee id" />
@@ -95,7 +96,7 @@ const Login = () => {
               {
                 required: true,
                 type: 'password',
-                message: 'Please input your password!',
+                message: 'Enter your password!',
               },
             ]}
           >
@@ -115,14 +116,14 @@ const Login = () => {
 
           <Form.Item
             wrapperCol={{
-              offset: 1,
-              span: 16,
+              offset: 0,
+              span: 0,
             }}
           >
             <Button type="secondary" onClick={onReset} className={styles.reset}>
               Reset
             </Button>
-            <Button type="primary" htmlType="submit">
+            <Button type="primary" htmlType="submit" className={styles.reset}>
               Submit
             </Button>
           </Form.Item>

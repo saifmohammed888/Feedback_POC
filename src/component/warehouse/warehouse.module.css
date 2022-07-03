@@ -6,17 +6,23 @@
 
 .warehouse>h3{
    display: flex;
+   margin-left: 4vw;
 }
 .warehouse>h3>p{
    margin-left: 5vw;
    color: white;
-   background-color: red;
-   padding: 5px;
+   background-color: rgb(251, 142, 142);
+   padding: 1px 5px;
    font-size: 10px;
    border-radius: 5%;
  }
  
-
+.select{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10vh;
+}
 
 .warehouseContainer{
     margin-top: 10vh;
@@ -29,6 +35,12 @@
     margin: 10px;
     border-radius: 3%;
     background-color: gainsboro;
+ 
+}
+
+.warehouseCard:nth-child(1),.warehouseCard:nth-child(3){
+    pointer-events: none;
+    opacity: 0.4;
 }
 
 .warehouseCard:nth-child(2){

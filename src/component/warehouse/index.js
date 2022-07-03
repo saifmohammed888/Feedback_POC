@@ -25,12 +25,15 @@ export const Warehouse = () => {
 
   return (
     <div className={styles.warehouse}>
-        <h3>Warehouse {warehouse===""?<p>* Required</p>:null} </h3>
+        <h3>Warehouse <p>* Required</p> </h3>
+        <span className={styles.select}>
         <SelectItem/>
+        </span>
+      
         <section className={styles.warehouseContainer}>
             {WarehouseList.map((item, index) => {
                 return (
-                    <div  onClick={handleBreakdown} key={index} className={styles.warehouseCard}>
+                    <div onClick={handleBreakdown} key={index} className={styles.warehouseCard}>
                         <h4>{item}</h4>
                     </div>
                 )

@@ -23,8 +23,6 @@ export const DailyInspection = () => {
       setStartInspect(true);
       setLoading(false);
     }, 1000);
-
-    console.log(startInspection)
   }
 
   const handleComplete = () => {
@@ -36,8 +34,7 @@ export const DailyInspection = () => {
       route("/treatment")
     }, 2000);
   }
-
-
+  
   return (
       <section className={styles.dailyInspection}>
       {isLoading? <Loader/> : null}
@@ -52,7 +49,12 @@ export const DailyInspection = () => {
 
 export const InspectionDetail = () =>{
    const {equipmentDetails} = useContext(GlobalContext);
-   const equipment = JSON.parse(equipmentDetails)
+  let equipment = null;
+   if(typeof equipmentDetails === "string"){
+    equipment =JSON.parse(equipmentDetails)
+  }else{
+    equipment = equipmentDetails
+  }
 
   return (
     <section className={styles.details}>

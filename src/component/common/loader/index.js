@@ -20,10 +20,10 @@ export const Loader = () => {
   const [isModalVisible, setIsModalVisible] = useState(true);
 
   return (
-    <>
+    <section className='loaderComp'>
       <Modal className={styles.modal} visible={isModalVisible}>
-         Processing please wait... <Spin indicator={antIcon} />
+        <Spin indicator={antIcon} /> In-progress please wait.. 
       </Modal>
-    </>
+    </section>
   );
 };

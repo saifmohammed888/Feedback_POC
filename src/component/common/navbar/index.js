@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import {InformationCircleIcon, MenuIcon } from '@heroicons/react/solid'
+import {MenuIcon } from '@heroicons/react/solid'
 import styles from "./navbar.module.css"
 import { Sidebar } from '../sidebar'
 import { GlobalContext } from '../../../utils/context/globalContext';
@@ -24,7 +24,7 @@ return (
           <MenuIcon onClick={()=>{setIsOpen(!isOpen)}} className={styles.menuIcon} />
           <h2>{titleMapper[location.pathname]}</h2>
           <span className={styles.border}>
-            <InformationCircleIcon className={styles.circle}   />
+            <img src='/images/united-kingdom.png' alt='uk' />
           </span>
           {isOpen ?  <Sidebar setIsOpen={setIsOpen}/> : null}
     </nav>)

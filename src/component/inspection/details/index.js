@@ -10,7 +10,6 @@ import styles from "./details.module.css"
 const EquipmentDetail = () => {
   const [isModalVisible,setIsModalVisible] = useState(true);
   const {equipmentDetails,setEquipmentDetails} = useContext(GlobalContext);
-  console.log(equipmentDetails)
   const route = useNavigate();
   
   const handleNext = () => {
@@ -22,8 +21,9 @@ const EquipmentDetail = () => {
     setIsModalVisible(false);
     setEquipmentDetails({})
   };
-  const equipment = JSON.parse(equipmentDetails);
-  console.log(equipment)
+  
+  let equipment = JSON.parse(equipmentDetails);
+ 
   return (
     <>
       <Modal title="Equipment Detail" visible={isModalVisible} footer={[

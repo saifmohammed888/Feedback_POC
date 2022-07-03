@@ -40,11 +40,17 @@
 }
 
 .button{
-    width: 50vw;
+    width: 30vw;
     margin: auto;
+    margin-bottom: 5vh;
     padding: 5px;
-    border-radius: 5%;
+    border-radius: 20px;
     border: 1px solid gainsboro;
     background-color: rgb(144, 184, 144);
     color: white;
+}
+
+.buttons
+{
+    display: flex;
 }

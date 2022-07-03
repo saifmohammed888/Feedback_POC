@@ -11,7 +11,7 @@ const SelectItem = () => {
   const {setWarehouse} = useContext(GlobalContext);
     
   return (
-    <div>
+    <div >
         <Select
             showSearch
             onSelect={(value) => {

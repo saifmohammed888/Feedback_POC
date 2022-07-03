@@ -4,3 +4,8 @@
     top: 40vh;
 }
 
+.modal{
+    position: absolute;
+    top: 30vh;
+    left: 2vw;    
+}

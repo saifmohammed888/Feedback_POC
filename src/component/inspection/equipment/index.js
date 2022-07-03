@@ -9,7 +9,8 @@ export const ChooseEquipment = () => {
 
   const [equipment,setEquipment] = useState(null)
   const [disable,setDisable] = useState(false)
-  const {setEquipmentId} = useContext(GlobalContext);
+  const {setEquipmentId,setEquipmentDetails} = useContext(GlobalContext);
+
   const route = useNavigate();
 
   const handleSubmit = ()=>{
@@ -17,6 +18,15 @@ export const ChooseEquipment = () => {
         setEquipmentId(equipment)
         setDisable(true)
         toast.success("Equipment Id Saved")
+        setEquipmentDetails({
+          "EquipmentId": "123456YYY", 
+          "Warehouse":"ICHIKAWA II",
+         "Floor":"2nd Floor",
+         "Equipment":"PIB Unit",
+         "Model":"XC060",
+         "Vendor":"Daifuku"
+         })
+        route("/dailyInspection");
     }
   }
 
@@ -26,13 +36,14 @@ export const ChooseEquipment = () => {
 
   return (
     <div className={styles.equipment}>
+         <button onClick={handleScan} className={styles.button}>Scan</button>
         <label>Enter Equipment Id</label>
         <span className={!disable?styles.inputContainer:styles.disabled}>
         <UserOutlined/>
          <input disabled={disable}  className={styles.input} value={equipment} onChange={(e)=>{setEquipment(e.target.value)}} placeholder={"Enter Equipment Id"}></input>
         </span>
-     
-        {!disable?<button className={styles.button} onClick={handleSubmit}>Submit</button>:<button onClick={handleScan} className={styles.button}>Scan</button>}
+        <button className={styles.button} onClick={handleSubmit}>Submit</button>
+       
     </div>
   )
 }

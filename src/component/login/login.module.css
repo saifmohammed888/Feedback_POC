@@ -4,13 +4,19 @@ form{
 }
 
 .header{
-    font: bold;
+    font: bolder;
     margin-top: 10vh;
     text-align: center;
 }
 
 .reset{
-    margin: 0 10px;
+    margin-right: 20px;
+    border-radius: 30px;
+}
+
+.error{
+    margin: 2px;
+    color: red;
 }
 
 @media screen and (max-width: 768px) {
@@ -19,3 +25,5 @@ form{
         margin: 10vh 14vw !important;
     }
 }
+
+

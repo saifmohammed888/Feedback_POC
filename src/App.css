@@ -41,7 +41,15 @@
   width: 100vw;
 }
 
-/* .ant-modal-body{
+/* .ant-modal-footer{
+  display: none !important;
+} */
+
+.loaderComp{
+  display: none;
+}
+
+/* .loaderComp>.ant-modal-body{
   background-color: gainsboro;
   padding: 10px !important;
   text-align: center;
@@ -49,8 +57,4 @@
   top: 30vh;
   left: 27vw;
   border-radius: 5%;
-}
-
-.ant-modal-footer{
-  display: none !important;
 } */
